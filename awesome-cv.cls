@@ -162,6 +162,7 @@
 %-------------------------------------------------------------------------------
 % Set the FontAwesome font to be up-to-date.
 \let\FA\relax
+
 \newfontfamily\FA[Path=\@fontdir]{FontAwesome}
 
 % Set font for header (default is Roboto)
@@ -308,6 +309,10 @@
 % Defines writer's twitter (optional)
 % Usage: \twitter{<twitter handle>}
 \newcommand*{\twitter}[1]{\def\@twitter{#1}}
+
+% Defines writer's telegram (optional)
+% Usage: \telegram{<telegram username>}
+\newcommand*{\telegram}[1]{\def\@telegram{#1}}
 
 % Defines writer's skype (optional)
 % Usage: \skype{<skype account>}
@@ -504,6 +509,12 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://twitter.com/\@twitter}{\faTwitter\acvHeaderIconSep\@twitter}%
+        }%
+      \ifthenelse{\isundefined{\@telegram}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://t.me/\@telegram}{\faTelegram\acvHeaderIconSep\@telegram}%
         }%
       \ifthenelse{\isundefined{\@skype}}%
         {}%
