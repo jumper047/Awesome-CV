@@ -291,6 +291,7 @@
 % Defines writer's github (optional)
 % Usage: \github{<github-nick>}
 \newcommand*{\github}[1]{\def\@github{#1}}
+\newcommand*{\githubPrefix}{github.com/}
 
 % Defines writer's gitlab (optional)
 % Usage: \gitlab{<gitlab-nick>}
@@ -313,6 +314,7 @@
 % Defines writer's telegram (optional)
 % Usage: \telegram{<telegram username>}
 \newcommand*{\telegram}[1]{\def\@telegram{#1}}
+\newcommand*{\telegramPrefix}{@}
 
 % Defines writer's skype (optional)
 % Usage: \skype{<skype account>}
@@ -484,7 +486,7 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\@github}%
+          \href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\githubPrefix\@github}%
         }%
       \ifthenelse{\isundefined{\@gitlab}}%
         {}%
@@ -514,7 +516,7 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://t.me/\@telegram}{\faTelegram\acvHeaderIconSep\@telegram}%
+          \href{https://t.me/\@telegram}{\faTelegram\acvHeaderIconSep\telegramPrefix\@telegram}%
         }%
       \ifthenelse{\isundefined{\@skype}}%
         {}%
