@@ -288,15 +288,15 @@
 
 % Defines writer's homepage (optional)
 % Usage: \homepage{<url>}
-\newcommand*{\homepage}[1]{\def\@homepage{\color{linktext} #1}}
+\newcommand*{\homepage}[1]{\def\@homepage{#1}}
 
 % Defines writer's github (optional)
 % Usage: \github{<github-nick>}
-\newcommand*{\github}[1]{\def\@github{\color{linktext} #1}}
+\newcommand*{\github}[1]{\def\@github{#1}}
 
 % Defines writer's gitlab (optional)
 % Usage: \gitlab{<gitlab-nick>}
-\newcommand*{\gitlab}[1]{\def\@gitlab{\color{linktext} #1}}
+\newcommand*{\gitlab}[1]{\def\@gitlab{#1}}
 
 % Defines writer's stackoverflow profile (optional)
 % Usage: \stackoverflow{<so userid>}{<so username>}
@@ -306,32 +306,32 @@
 
 % Defines writer's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
-\newcommand*{\linkedin}[1]{\def\@linkedin{\color{linktext} #1}}
+\newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
 
 % Defines writer's twitter (optional)
 % Usage: \twitter{<twitter handle>}
-\newcommand*{\twitter}[1]{\def\@twitter{\color{linktext} #1}}
+\newcommand*{\twitter}[1]{\def\@twitter{#1}}
 
 % Defines writer's telegram (optional)
 % Usage: \telegram{<telegram username>}
-\newcommand*{\telegram}[1]{\def\@telegram{\color{linktext} #1}}
+\newcommand*{\telegram}[1]{\def\@telegram{#1}}
 \newcommand*{\telegramPrefix}{@}
 
 % Defines writer's skype (optional)
 % Usage: \skype{<skype account>}
-\newcommand*{\skype}[1]{\def\@skype{\color{linktext} #1}}
+\newcommand*{\skype}[1]{\def\@skype{#1}}
 
 % Defines writer's reddit (optional)
 % Usage: \reddit{<reddit account>}
-\newcommand*{\reddit}[1]{\def\@reddit{\color{linktext} #1}}
+\newcommand*{\reddit}[1]{\def\@reddit{#1}}
 
 % Defines writer's xing (optional)
 % Usage: \xing{<xing name>}
-\newcommand*{\xing}[1]{\def\@xing{\color{linktext} #1}}
+\newcommand*{\xing}[1]{\def\@xing{#1}}
 
 % Defines writer's medium profile (optional)
 % Usage: \medium{<medium account>}
-\newcommand*{\medium}[1]{\def\@medium{\color{linktext} #1}}
+\newcommand*{\medium}[1]{\def\@medium{#1}}
 
 % Defines writer's google scholar profile (optional)
 % Usage: \googlescholar{<googlescholar userid>}{<googlescholar username>}
@@ -481,19 +481,19 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
+          \href{http://\@homepage}{\faHome\acvHeaderIconSep\color{linktext}\underline\@homepage}%
         }%
       \ifthenelse{\isundefined{\@github}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\@github}%
+          \href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\color{linktext}\underline\@github}%
         }%
       \ifthenelse{\isundefined{\@gitlab}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://gitlab.com/\@gitlab}{\faGitlab\acvHeaderIconSep\@gitlab}%
+          \href{https://gitlab.com/\@gitlab}{\faGitlab\acvHeaderIconSep\color{linktext}\underline\@gitlab}%
         }%
       \ifthenelse{\isundefined{\@stackoverflowid}}%
         {}%
@@ -505,43 +505,43 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\acvHeaderIconSep\@linkedin}%
+          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\acvHeaderIconSep\color{linktext}\underline\@linkedin}%
         }%
       \ifthenelse{\isundefined{\@twitter}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://twitter.com/\@twitter}{\faTwitter\acvHeaderIconSep\@twitter}%
+          \href{https://twitter.com/\@twitter}{\faTwitter\acvHeaderIconSep\color{linktext}\underline\@twitter}%
         }%
       \ifthenelse{\isundefined{\@telegram}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://t.me/\@telegram}{\faTelegram\acvHeaderIconSep\telegramPrefix\@telegram}%
+          \href{https://t.me/\@telegram}{\faTelegram\acvHeaderIconSep\color{linktext}\underline\@telegram}%
         }%
       \ifthenelse{\isundefined{\@skype}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \faSkype\acvHeaderIconSep\@skype%
+          \faSkype\acvHeaderIconSep\color{linktext}\underline\@skype%
         }%
       \ifthenelse{\isundefined{\@reddit}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.reddit.com/user/\@reddit}{\faReddit\acvHeaderIconSep\@reddit}%
+          \href{https://www.reddit.com/user/\@reddit}{\faReddit\acvHeaderIconSep\color{linktext}\underline\@reddit}%
         }%
       \ifthenelse{\isundefined{\@xing}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.xing.com/profile/\@xing}{\faXingSquare\acvHeaderIconSep\@xing}
+          \href{https://www.xing.com/profile/\@xing}{\faXingSquare\acvHeaderIconSep\color{linktext}\underline\@xing}
         }%
       \ifthenelse{\isundefined{\@medium}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://medium.com/@\@medium}{\faMedium\acvHeaderIconSep\@medium}%
+          \href{https://medium.com/@\@medium}{\faMedium\acvHeaderIconSep\color{linktext}\underline\@medium}%
         }%
       \ifthenelse{\isundefined{\@googlescholarid}}%
         {}%
